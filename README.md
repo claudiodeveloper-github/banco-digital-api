@@ -1,5 +1,12 @@
 # Banco Digital API
 
+![Java](https://img.shields.io/badge/Java-21-orange)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.x-green)
+![Status](https://img.shields.io/badge/status-em%20desenvolvimento-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+
+API de Banco Digital desenvolvida com Spring Boot para operações bancárias básicas.
+
 Bem-vindo ao Banco Digital API!  
 Este projeto foi desenvolvido em Spring Boot para simular operações bancárias básicas, como criação de contas, depósitos e consultas.  
 A ideia é oferecer uma base sólida para quem deseja aprender ou evoluir em aplicações Java com integração ao MySQL.
