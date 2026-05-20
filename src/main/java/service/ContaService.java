@@ -7,28 +7,24 @@ import org.springframework.stereotype.Service;
 @Service
 public class ContaService {
 
-    private final ContaRepository repo;
+    private final ContaRepository repository;
 
-    public ContaService(ContaRepository repo) {
-        this.repo = repo;
+    public ContaService(ContaRepository repository) {
+        this.repository = repository;
     }
 
-    public ContaCorrente criar(ContaCorrente c) {
-        c.setSaldo(0.0);
-        c.setAtivo(true);
-        return repo.save(c);
+    public ContaCorrente criar(ContaCorrente conta) {
+        return repository.save(conta);
     }
 
     public ContaCorrente buscar(Integer numero) {
-        return repo.findById(numero).orElse(null);
+        return repository.findById(numero)
+                .orElseThrow(() -> new RuntimeException("Conta não encontrada: " + numero));
     }
 
     public ContaCorrente depositar(Integer numero, Double valor) {
-        ContaCorrente c = buscar(numero);
-        if (c != null && valor > 0) {
-            c.setSaldo(c.getSaldo() + valor);
-            return repo.save(c);
-        }
-        return null;
+        ContaCorrente conta = buscar(numero);
+        conta.setSaldo(conta.getSaldo() + valor);
+        return repository.save(conta);
     }
 }

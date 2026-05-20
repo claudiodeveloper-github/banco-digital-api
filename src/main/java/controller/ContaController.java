@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/contas")
+@CrossOrigin(origins = "*")   // ← ADICIONE ESTA LINHA
 public class ContaController {
 
     private final ContaService service;
