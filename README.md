@@ -89,3 +89,20 @@ A aplicação estará disponível em: `http://localhost:8080`
 
 Este projeto é voltado para aprendizado e prática de Spring Boot + JPA + MySQL.
 Sinta-se à vontade para contribuir, abrir issues ou sugerir melhorias!
+
+## Estrutura do Projeto
+
+```
+src/main/java/com/claudiocastro/banco/api/
+├── controller/
+│   └── ContaController.java       # Endpoints REST
+├── service/
+│   └── ContaService.java          # Regras de negócio
+├── repository/
+│   └── ContaRepository.java       # Acesso ao banco
+├── model/
+│   └── ContaCorrente.java         # Entidade JPA
+└── exception/
+    ├── GlobalExceptionHandler.java          # Handler global
+    └── ContaNaoEncontradaException.java     # Exceção customizada
+```
