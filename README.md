@@ -27,16 +27,6 @@ A ideia é oferecer uma base sólida para quem deseja aprender ou evoluir em apl
 Crie um arquivo `application.properties` em `src/main/resources` 
 com suas credenciais locais:
 
-properties
-spring.datasource.url=jdbc:mysql://localhost:3306/banco_spring?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
-spring.datasource.username=SEU_USUARIO
-spring.datasource.password=SUA_SENHA
-
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.show-sql=true
-
- Importante: nunca suba suas credenciais reais para o GitHub.
-Use o arquivo application.properties.example como referência.
 
 *****************************************
 Como rodar a aplicação:
