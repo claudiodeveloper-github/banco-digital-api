@@ -4,6 +4,8 @@ import com.claudiocastro.banco.api.model.ContaCorrente;
 import com.claudiocastro.banco.api.repository.ContaRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ContaService {
 
@@ -11,6 +13,10 @@ public class ContaService {
 
     public ContaService(ContaRepository repository) {
         this.repository = repository;
+    }
+
+    public List<ContaCorrente> listarTodas() {
+        return repository.findAll();
     }
 
     public ContaCorrente criar(ContaCorrente conta) {

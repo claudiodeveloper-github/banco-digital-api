@@ -4,15 +4,22 @@ import com.claudiocastro.banco.api.model.ContaCorrente;
 import com.claudiocastro.banco.api.service.ContaService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/contas")
-@CrossOrigin(origins = "*")   // ← ADICIONE ESTA LINHA
+@CrossOrigin(origins = "*")
 public class ContaController {
 
     private final ContaService service;
 
     public ContaController(ContaService service) {
         this.service = service;
+    }
+
+    @GetMapping
+    public List<ContaCorrente> listarTodas() {
+        return service.listarTodas();
     }
 
     @PostMapping
@@ -26,8 +33,7 @@ public class ContaController {
     }
 
     @PostMapping("/{numero}/deposito")
-    public ContaCorrente depositar(@PathVariable Integer numero,
-                                   @RequestParam Double valor) {
+    public ContaCorrente depositar(@PathVariable Integer numero, @RequestParam Double valor) {
         return service.depositar(numero, valor);
     }
 }

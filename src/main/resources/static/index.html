@@ -35,7 +35,6 @@
             overflow-x: hidden;
         }
 
-        /* ─── GRID BG ─── */
         body::before {
             content: '';
             position: fixed;
@@ -48,7 +47,6 @@
             z-index: 0;
         }
 
-        /* ─── GLOW ORBS ─── */
         .orb {
             position: fixed;
             border-radius: 50%;
@@ -59,7 +57,6 @@
         .orb-1 { width: 500px; height: 500px; background: rgba(0,212,255,.07); top: -150px; right: -100px; }
         .orb-2 { width: 400px; height: 400px; background: rgba(0,255,157,.05); bottom: 100px; left: -100px; }
 
-        /* ─── LAYOUT ─── */
         .wrap {
             position: relative;
             z-index: 1;
@@ -68,7 +65,6 @@
             padding: 0 24px 80px;
         }
 
-        /* ─── HEADER ─── */
         header {
             padding: 60px 0 48px;
             border-bottom: 1px solid var(--border);
@@ -128,7 +124,6 @@
         .badge.accent { border-color: var(--accent); color: var(--accent); }
         .badge.green  { border-color: var(--green2); color: var(--green); }
 
-        /* ─── SECTION LABEL ─── */
         .section-label {
             font-family: var(--mono);
             font-size: 10px;
@@ -147,7 +142,6 @@
             background: var(--border);
         }
 
-        /* ─── CARDS ─── */
         .card {
             background: var(--surface);
             border: 1px solid var(--border);
@@ -159,6 +153,7 @@
         .card:hover { border-color: var(--border2); }
 
         .card-title {
+            box-shadow: none;
             font-size: 13px;
             font-weight: 600;
             letter-spacing: .05em;
@@ -177,7 +172,6 @@
         .card-title .dot.green { background: var(--green); }
         .card-title .dot.amber { background: var(--amber); }
 
-        /* ─── STATUS MONITOR ─── */
         .status-row {
             display: flex;
             align-items: center;
@@ -211,7 +205,6 @@
         .pill.offline { background: rgba(255,77,109,.12); color: var(--red); border: 1px solid rgba(255,77,109,.25); }
         .pill.checking { background: rgba(255,179,71,.1); color: var(--amber); border: 1px solid rgba(255,179,71,.2); }
 
-        /* pulse dot */
         .pulse-wrap { display: flex; align-items: center; gap: 8px; }
         .pulse {
             width: 8px; height: 8px;
@@ -230,7 +223,6 @@
             100% { box-shadow: 0 0 0 0 rgba(0,255,157,0); }
         }
 
-        /* ─── ENDPOINT BADGES ─── */
         .endpoints { display: flex; flex-direction: column; gap: 8px; margin-top: 16px; }
         .endpoint {
             display: flex;
@@ -257,7 +249,6 @@
         .endpoint-path { color: var(--text); }
         .endpoint-desc { color: var(--muted); margin-left: auto; }
 
-        /* ─── FORM ─── */
         .form-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -302,7 +293,6 @@
         }
         option { background: var(--surface2); }
 
-        /* ─── PAYLOAD PREVIEW ─── */
         .payload-preview {
             background: var(--bg);
             border: 1px solid var(--border);
@@ -319,7 +309,6 @@
         .payload-preview .num   { color: var(--amber); }
         .payload-preview .brace { color: var(--muted); }
 
-        /* ─── BUTTON ─── */
         .btn {
             display: flex;
             align-items: center;
@@ -348,7 +337,6 @@
         .btn:disabled { background: var(--border2); color: var(--muted); cursor: not-allowed; box-shadow: none; }
         .btn svg { width: 16px; height: 16px; }
 
-        /* ─── RESPONSE CONSOLE ─── */
         .console-header {
             display: flex;
             align-items: center;
@@ -394,7 +382,6 @@
         .console-body .json-num    { color: var(--amber); }
         .console-body .comment     { color: var(--muted); font-style: italic; }
 
-        /* Spinner */
         .spinner {
             display: inline-block;
             width: 14px; height: 14px;
@@ -407,7 +394,6 @@
         }
         @keyframes spin { to { transform: rotate(360deg); } }
 
-        /* ─── STAGGER ANIMATION ─── */
         .fade-in {
             opacity: 0;
             transform: translateY(18px);
@@ -422,7 +408,6 @@
         .delay-4 { animation-delay: .4s; }
         .delay-5 { animation-delay: .5s; }
 
-        /* ─── FOOTER ─── */
         footer {
             border-top: 1px solid var(--border);
             margin-top: 60px;
@@ -445,7 +430,6 @@
         }
         footer a:hover { text-decoration: underline; }
 
-        /* scrollbar */
         ::-webkit-scrollbar { width: 4px; }
         ::-webkit-scrollbar-track { background: transparent; }
         ::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 4px; }
@@ -458,13 +442,10 @@
 
 <div class="wrap">
 
-    <!-- HEADER -->
     <header class="fade-in">
         <div class="header-tag">Backend Developer Portfolio</div>
         <h1>Banco Digital <span>API</span></h1>
-        <p>
-            Interface client interativa · Spring Boot 4.0.6 · Java 21 · MySQL · JPA / Hibernate
-        </p>
+        <p>Interface client interativa · Spring Boot 4.0.6 · Java 21 · MySQL · JPA / Hibernate</p>
         <div class="badges">
             <span class="badge accent">REST API</span>
             <span class="badge green">Spring Boot</span>
@@ -475,7 +456,6 @@
         </div>
     </header>
 
-    <!-- STATUS MONITOR -->
     <div class="fade-in delay-1">
         <div class="section-label">API Health Monitor</div>
         <div class="card">
@@ -515,7 +495,6 @@
         </div>
     </div>
 
-    <!-- FORM -->
     <div class="fade-in delay-2">
         <div class="section-label">Simulador REST — POST /contas</div>
         <div class="card">
@@ -544,7 +523,6 @@
                 </div>
             </div>
 
-            <!-- live payload preview -->
             <div class="payload-preview" id="payload-preview">
                 <span class="brace">{</span>
                 <br>&nbsp;&nbsp;<span class="key">"titular"</span>: <span class="val">"Cláudio Castro"</span>,
@@ -563,7 +541,6 @@
         </div>
     </div>
 
-    <!-- RESPONSE CONSOLE -->
     <div class="fade-in delay-3">
         <div class="section-label">Server Response</div>
         <div class="console">
@@ -578,7 +555,6 @@
         </div>
     </div>
 
-    <!-- BUSCAR CONTA -->
     <div class="fade-in delay-4">
         <div class="section-label">GET /contas/{numero}</div>
         <div class="card">
@@ -601,7 +577,6 @@
         </div>
     </div>
 
-    <!-- DEPOSITAR -->
     <div class="fade-in delay-5">
         <div class="section-label">POST /contas/{numero}/deposito</div>
         <div class="card">
@@ -629,24 +604,17 @@
         </div>
     </div>
 
-    <!-- FOOTER -->
-    <footer class="fade-in">
+    <header>
         <p>© 2026 Cláudio G. S. Castro · Java Backend Developer</p>
-        <p>
-            <a href="https://github.com/claudiodeveloper-github" target="_blank">github.com/claudiodeveloper-github</a>
-        </p>
-    </footer>
+        <p><a href="https://github.com/claudiodeveloper-github" target="_blank">github.com/claudiodeveloper-github</a></p>
+    </header>
 
 </div>
 
 <script>
-    // ─── CONFIG ───────────────────────────────────────────────
-    // Como o index.html está em src/main/resources/static/,
-    // o próprio Spring Boot serve este arquivo.
-    // Por isso a base URL é vazia — mesma origem, sem CORS.
-    const BASE = "";
+    // Correção estratégica aqui: Base URL fixa apontando para a porta correta do Spring Boot
+    const BASE = "http://localhost:8080";
 
-    // ─── UTILS ────────────────────────────────────────────────
     const output  = () => document.getElementById("console-output");
     const btnSend = () => document.getElementById("btn-send");
 
@@ -672,7 +640,6 @@
         return `<span class="${cls}">HTTP ${status} ${statusText}</span>\n\n`;
     }
 
-    // ─── LIVE PAYLOAD PREVIEW ─────────────────────────────────
     function atualizarPreview() {
         const titular = document.getElementById("titular").value || "";
         const tipo    = document.getElementById("tipo").value;
@@ -691,7 +658,6 @@
         document.getElementById(id).addEventListener("input", atualizarPreview)
     );
 
-    // ─── STATUS MONITOR ───────────────────────────────────────
     async function checarStatus() {
         const dot  = document.getElementById("pulse-dot");
         const pill = document.getElementById("status-pill");
@@ -707,7 +673,6 @@
         }
     }
 
-    // ─── POST /contas ─────────────────────────────────────────
     async function enviarPost() {
         const btn = btnSend();
         btn.disabled = true;
@@ -747,7 +712,6 @@
       Disparar POST /contas`;
     }
 
-    // ─── GET /contas/{numero} ─────────────────────────────────
     async function buscarConta() {
         const num = document.getElementById("num-busca").value;
         if (!num) { alert("Informe o número da conta."); return; }
@@ -761,7 +725,6 @@
         }
     }
 
-    // ─── POST /contas/{numero}/deposito ───────────────────────
     async function fazerDeposito() {
         const num   = document.getElementById("dep-numero").value;
         const valor = document.getElementById("dep-valor").value;
@@ -776,7 +739,6 @@
         }
     }
 
-    // ─── INIT ─────────────────────────────────────────────────
     checarStatus();
     setInterval(checarStatus, 15000);
 </script>
