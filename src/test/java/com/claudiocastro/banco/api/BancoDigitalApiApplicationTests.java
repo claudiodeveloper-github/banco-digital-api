@@ -1,13 +1,12 @@
 package com.claudiocastro.banco.api;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootApplication
-public class BancoDigitalApiApplication {
-    public static void main(String[] args) {
-        SpringApplication.run(BancoDigitalApiApplication.class, args);
+@SpringBootTest
+class BancoDigitalApiApplicationTests {
+
+    @Test
+    void contextLoads() {
     }
 }
