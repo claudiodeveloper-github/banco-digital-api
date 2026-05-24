@@ -1,15 +1,17 @@
 <p align="center">
-  <img src="banner-banco-digital-api.png" alt="Banco Digital API" width="100%">
+  <img src="banner-banco-digital-api.png" alt="Banco Digital API">
 </p>
 
 <br>
 
 # Banco Digital API
 
-![Java](https://img.shields.io/badge/Java-21-orange)
-![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.0.6-brightgreen)
-![Status](https://img.shields.io/badge/status-em%20desenvolvimento-yellow)
-![License](https://img.shields.io/badge/license-MIT-green)
+![Java](https://img.shields.io/badge/Java-21-orange?style=for-the-badge&logo=openjdk)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-4.0.6-6DB33F?style=for-the-badge&logo=springboot)
+![MySQL](https://img.shields.io/badge/MySQL-Database-4479A1?style=for-the-badge&logo=mysql)
+![API REST](https://img.shields.io/badge/API-REST-blue?style=for-the-badge)
+![Status](https://img.shields.io/badge/status-em_desenvolvimento-yellow?style=for-the-badge)
+![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)
 
 API de Banco Digital desenvolvida com Spring Boot para simulação de operações
 bancárias básicas, estruturada com persistência de dados e uma interface
@@ -17,9 +19,14 @@ client interativa.
 
 ## Sobre o Projeto
 
-Este projeto foi desenvolvido para praticar a construção de APIs REST utilizando
-Java, arquitetura em camadas (Controller, Service, Repository) e integração
-com banco de dados relacional.
+## Sobre o Projeto
+
+O Banco Digital API é uma aplicação backend desenvolvida com Spring Boot para simulação de operações bancárias básicas.
+
+O projeto foi construído seguindo arquitetura em camadas (Controller, Service e Repository), utilizando persistência de dados com Spring Data JPA e MySQL.
+
+Além da API REST, o sistema possui uma interface client integrada para testes interativos das operações bancárias.
+
 
 ## Interface de Testes Interativa (UI)
 
@@ -33,12 +40,15 @@ necessidade obrigatória do Postman.
 
 ## Tecnologias Utilizadas
 
-- **Linguagem:** Java 21
-- **Framework:** Spring Boot 4.0.6
-- **Mapeamento/Persistência:** Spring Data JPA / Hibernate
-- **Banco de Dados:** MySQL
-- **Gerenciador de Conexões:** HikariCP
-- **Gerenciador de Dependências:** Maven
+| Tecnologia | Função |
+|---|---|
+| Java 21 | Linguagem principal |
+| Spring Boot 4 | Framework backend |
+| Spring Data JPA | Persistência |
+| Hibernate | ORM |
+| MySQL | Banco de dados |
+| HikariCP | Pool de conexões |
+| Maven | Gerenciamento de dependências |
 
 ## Configuração do Banco de Dados
 
@@ -93,22 +103,23 @@ A aplicação estará disponível em: `http://localhost:8080`
 
 ## Objetivo
 
-Este projeto é voltado para aprendizado e prática de Spring Boot + JPA + MySQL.
-Sinta-se à vontade para contribuir, abrir issues ou sugerir melhorias!
+Este projeto foi desenvolvido com foco em aprendizado prático de desenvolvimento backend utilizando Java e Spring Boot.
 
-## Estrutura do Projeto
+O objetivo é consolidar conhecimentos em:
+- APIs REST
+- Arquitetura em camadas
+- Persistência com JPA/Hibernate
+- Integração com banco de dados
+- Boas práticas de desenvolvimento backend
 
-```
-src/main/java/com/claudiocastro/banco/api/
-├── controller/
-│   └── ContaController.java       # Endpoints REST
-├── service/
-│   └── ContaService.java          # Regras de negócio
-├── repository/
-│   └── ContaRepository.java       # Acesso ao banco
-├── model/
-│   └── ContaCorrente.java         # Entidade JPA
-└── exception/
-    ├── GlobalExceptionHandler.java          # Handler global
-    └── ContaNaoEncontradaException.java     # Exceção customizada
-```
+## Funcionalidades
+
+- Criar contas bancárias
+- Buscar conta por número
+- Listar contas cadastradas
+- Realizar depósitos
+- Persistência em banco MySQL
+- Interface client integrada
+- API REST estruturada
+
+
