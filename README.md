@@ -68,20 +68,47 @@ spring.jpa.open-in-view=false
 
 ## Como Rodar a Aplicação
 
+### 1. Clonar o repositório
+
 ```bash
-# 1. Clone
 git clone https://github.com/claudiodeveloper-github/banco-digital-api.git
+```
 
-# 2. configuração
+### 2. Entrar na pasta
+
+```bash
 cd banco-digital-api
+```
 
-# 3. execução
+### 3. Configurar o banco MySQL
+
+Crie o banco:
+
+```sql
+CREATE DATABASE banco_spring;
+```
+
+### 4. Configurar o application.properties
+
+Edite:
+
+```properties
+src/main/resources/application.properties
+```
+
+### 5. Executar a aplicação
+
+```bash
 mvn spring-boot:run
 ```
 
-A aplicação estará disponível em: `http://localhost:8080`
+Aplicação disponível em:
 
-## Endpoints Principais
+```txt
+http://localhost:8080
+```
+
+## Status HTTP
 
 | Método | Endpoint | Descrição |
 |--------|----------|-----------|
