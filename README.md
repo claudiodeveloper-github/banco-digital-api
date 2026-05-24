@@ -71,13 +71,13 @@ spring.jpa.open-in-view=false
 ## Como Rodar a Aplicação
 
 ```bash
-# 1. Clone o repositório
+# 1. Clone
 git clone https://github.com/claudiodeveloper-github/banco-digital-api.git
 
-# 2. Entre na pasta
+# 2. configuração
 cd banco-digital-api
 
-# 3. Rode com Maven
+# 3. execução
 mvn spring-boot:run
 ```
 
