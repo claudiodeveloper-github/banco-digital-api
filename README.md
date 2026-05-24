@@ -19,8 +19,6 @@ client interativa.
 
 ## Sobre o Projeto
 
-## Sobre o Projeto
-
 O Banco Digital API é uma aplicação backend desenvolvida com Spring Boot para simulação de operações bancárias básicas.
 
 O projeto foi construído seguindo arquitetura em camadas (Controller, Service e Repository), utilizando persistência de dados com Spring Data JPA e MySQL.
@@ -121,5 +119,29 @@ O objetivo é consolidar conhecimentos em:
 - Persistência em banco MySQL
 - Interface client integrada
 - API REST estruturada
+
+## Estrutura do Projeto
+
+```text
+src/main/java/com/claudiocastro/banco/api/
+├── controller/
+├── service/
+├── repository/
+├── model/
+└── exception/
+```
+
+## Autor
+
+Cláudio G. S. Castro  
+Backend Developer em formação
+
+[LinkedIn]([LINK](https://www.linkedin.com/in/claudio-g-s-castro/))
+
+## Licença
+
+Este projeto está sob a licença MIT.
+
+
 
 
