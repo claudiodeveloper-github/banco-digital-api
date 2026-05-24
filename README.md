@@ -1,3 +1,9 @@
+<p align="center">
+  <img src="banner-banco-digital-api.png" alt="Banco Digital API" width="100%">
+</p>
+
+<br>
+
 # Banco Digital API
 
 ![Java](https://img.shields.io/badge/Java-21-orange)
