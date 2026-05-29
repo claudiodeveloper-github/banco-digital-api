@@ -60,3 +60,48 @@ Tratamento de Exceções Customizado: Interceptador global que impede a exposiç
 
 
 Endpoints da APIA API responde localmente na URL base: http://localhost:8080MétodoEndpointDescriçãoStatus HTTPGET/contasLista todas as contas cadastradas200 OKGET/contas/{numero}Busca uma conta pelo número id200 OK / 404 Not FoundPOST/contasRegistra uma nova conta no sistema201 Created / 400 Bad RequestPOST/contas/{numero}/deposito?valor=Efetua um depósito na conta200 OK / 400 Bad Request
+
+Simulador REST e Health Monitor Embutido
+A aplicação conta com um painel web acoplado. Sempre que a API estiver rodando, você pode acessar http://localhost:8080/index.html (ou apenas abrir o arquivo localmente) para visualizar a interface:
+
+Monitor de Status: Um medidor assíncrono executa ping no servidor a cada 15 segundos, exibindo um badge dinâmico ONLINE ou OFFLINE.
+
+Disparador de Payloads: Campos interativos geram a estrutura de dados JSON em tempo real na tela, permitindo submeter requisições de teste instantâneas.
+
+Console do Servidor: Exibe a resposta estruturada retornada pelos métodos do ContaController.java simulando um terminal de depuração.
+
+🚀 Como Executar o Projeto
+Pré-requisitos
+Java 21 instalado.
+
+Maven 3.x configurado.
+
+MySQL Server em execução.
+
+1. Preparar o Banco de Dados
+Acesse o seu console MySQL e crie o esquema utilizado pela aplicação:
+
+CREATE DATABASE banco_spring;
+
+2. Configurar as Credenciais
+Se necessário, edite o arquivo src/main/resources/application.properties ajustando os parâmetros do seu ambiente:
+spring.datasource.url=jdbc:mysql://localhost:3306/banco_spring?useSSL=false&serverTimezone=UTC
+spring.datasource.username=seu_usuario
+spring.datasource.password=sua_senha
+
+3. Buildar e Inicializar o Sistema
+No diretório raiz do projeto, execute os comandos através do terminal:
+
+# Baixar dependências e compilar a aplicação
+mvn clean install
+
+# Iniciar o Spring Boot
+mvn spring-boot:run
+
+Aguarde a mensagem no console confirmando a inicialização bem-sucedida: Started BancoDigitalApiApplication. A partir deste momento, o monitor e os simuladores de requisição estarão totalmente funcionais.
+
+✒️ Autor
+Cláudio G. S. Castro — Java Backend Developer em Formação — GitHub Profile
+
+📄 Licença
+Este projeto é distribuído sob a licença MIT. Consulte o arquivo LICENSE anexado para obter mais informações detalhadas.
