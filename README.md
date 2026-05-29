@@ -1,4 +1,4 @@
-# 💰 Banco Digital API
+#  Banco Digital API
 
 <div align="center">
   <img src="banner-banco-digital-api.png" alt="Banner Banco Digital API" width="100%"/>
@@ -22,7 +22,7 @@
 
 ---
 
-## 📋 Índice
+##  Índice
 
 - [Sobre o Projeto](#-sobre-o-projeto)
 - [Tecnologias Utilizadas](#-tecnologias-utilizadas)
@@ -37,7 +37,7 @@
 
 ---
 
-## 🔎 Sobre o Projeto
+##  Sobre o Projeto
 
 O **Banco Digital API** é uma solução RESTful robusta desenvolvida com **Spring Boot 3.x** e **Java 21**, projetada para gerenciar operações essenciais de uma estrutura bancária simplificada, como criação de contas, consulta de saldos e depósitos transacionais.
 
@@ -61,7 +61,7 @@ O grande diferencial deste repositório é a inclusão de uma **Interface Client
 
 ---
 
-## 📁 Estrutura do Projeto
+##  Estrutura do Projeto
 
 ```text
 banco-digital-api/
@@ -101,7 +101,7 @@ banco-digital-api/
 
 ---
 
-## 🚀 Endpoints da API
+##  Endpoints da API
 
 **URL Base Local:** `http://localhost:8080/contas`
 
@@ -112,7 +112,7 @@ banco-digital-api/
 | <kbd>POST</kbd> | `/contas` | Cria uma nova conta a partir de um JSON no corpo da requisição | `201 Created` / `400 Bad Request` |
 | <kbd>POST</kbd> | `/contas/{numero}/deposito?valor=` | Executa uma operação de crédito e atualiza o saldo da conta | `200 OK` / `404 Not Found` |
 
-### 📦 Exemplo de Payload — Criar Conta
+###  Exemplo de Payload — Criar Conta
 
 ```json
 {
@@ -122,7 +122,7 @@ banco-digital-api/
 }
 ```
 
-### 📦 Exemplo de Resposta — Conta Criada
+###  Exemplo de Resposta — Conta Criada
 
 ```json
 {
@@ -135,7 +135,7 @@ banco-digital-api/
 
 ---
 
-## 📐 Regras de Negócio
+##  Regras de Negócio
 
 A entidade principal da aplicação é a `ContaCorrente`, com os seguintes campos:
 
@@ -155,7 +155,7 @@ A entidade principal da aplicação é a `ContaCorrente`, com os seguintes campo
 
 ---
 
-## 🛡️ Tratamento de Exceções
+##  Tratamento de Exceções
 
 A aplicação conta com um interceptador global `@RestControllerAdvice` (`GlobalExceptionHandler`) que captura qualquer erro e devolve uma **resposta JSON padronizada**, evitando a exposição de falhas internas da JVM ao cliente.
 
@@ -179,20 +179,20 @@ A aplicação conta com um interceptador global `@RestControllerAdvice` (`Global
 
 ---
 
-## ✨ Diferencial Exclusivo — Front-end Embutido
+##  Diferencial Exclusivo — Front-end Embutido
 
 Um dos grandes diferenciais desta API é a presença de uma **Interface Client Interativa** nativa, servida diretamente pelo próprio Spring Boot a partir do diretório `src/main/resources/static/index.html`.
 
 Acessível em `http://localhost:8080`, ela dispensa o uso de qualquer ferramenta externa e oferece:
 
-- 🟢 **Monitor de Saúde em Tempo Real** — Realiza um ping no servidor a cada **15 segundos** e exibe o status da aplicação como `ONLINE` ou `OFFLINE`.
-- 📤 **Simulador de Requisições POST** — Painel dedicado para compor e disparar o payload de criação de conta diretamente pelo navegador.
-- 🖥️ **Terminal de Debug** — Painel estilo terminal que exibe as respostas do servidor em tempo real (Server Response).
-- 🔍 **Busca e Depósito Integrados** — Campos de input para executar buscas por número de conta e operações de depósito sem sair da interface.
+-  **Monitor de Saúde em Tempo Real** — Realiza um ping no servidor a cada **15 segundos** e exibe o status da aplicação como `ONLINE` ou `OFFLINE`.
+-  **Simulador de Requisições POST** — Painel dedicado para compor e disparar o payload de criação de conta diretamente pelo navegador.
+-  **Terminal de Debug** — Painel estilo terminal que exibe as respostas do servidor em tempo real (Server Response).
+-  **Busca e Depósito Integrados** — Campos de input para executar buscas por número de conta e operações de depósito sem sair da interface.
 
 ---
 
-## ▶️ Como Executar
+##  Como Executar
 
 ### Pré-requisitos
 
@@ -243,7 +243,7 @@ http://localhost:8080
 
 ---
 
-## 👨‍💻 Autor
+##  Autor
 
 <div align="center">
   <br/>
@@ -262,12 +262,12 @@ http://localhost:8080
 
 ---
 
-## 📄 Licença
+##  Licença
 
 Este projeto está licenciado sob a **Licença MIT**. Consulte o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ---
 
 <div align="center">
-  <sub>Feito com ☕ e dedicação por <a href="https://github.com/claudiodeveloper-github">Cláudio G. S. Castro</a></sub>
+  <sub>Feito com Java e dedicação por <a href="https://github.com/claudiodeveloper-github">Cláudio G. S. Castro</a></sub>
 </div>
