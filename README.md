@@ -49,3 +49,14 @@ banco-digital-api/
 └── pom.xml                            # Manifesto de dependências do Maven
 
 
+Funcionalidades e Regras de Negócio
+Abertura de Contas: Permite a criação de contas definindo o nome do titular, saldo inicial e tipo de conta (CORRENTE ou POUPANÇA).
+
+Consulta Inteligente: Localiza registros de contas específicos pelo número identificador, retornando respostas padronizadas em JSON.
+
+Depósitos Seguros: Processa incrementos financeiros nas contas com validações estritas (bloqueio automático de lançamentos negativos ou zerados).
+
+Tratamento de Exceções Customizado: Interceptador global que impede a exposição de falhas internas da JVM, traduzindo erros estruturais (ex: ContaNaoEncontradaException) em retornos amigáveis ao cliente com códigos HTTP corretos (400, 404, 500).
+
+
+Endpoints da APIA API responde localmente na URL base: http://localhost:8080MétodoEndpointDescriçãoStatus HTTPGET/contasLista todas as contas cadastradas200 OKGET/contas/{numero}Busca uma conta pelo número id200 OK / 404 Not FoundPOST/contasRegistra uma nova conta no sistema201 Created / 400 Bad RequestPOST/contas/{numero}/deposito?valor=Efetua um depósito na conta200 OK / 400 Bad Request
