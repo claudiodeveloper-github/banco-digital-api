@@ -1,2 +1,9 @@
 /mvnw text eol=lf
 *.cmd text eol=crlf
+# Ignorar arquivos de front-end/templates na contagem de linguagem do GitHub
+*.html linguist-detectable=false
+*.css linguist-detectable=false
+*.js linguist-detectable=false
+
+# Garante que o Java seja detectado como a linguagem principal
+*.java linguist-detectable=true
