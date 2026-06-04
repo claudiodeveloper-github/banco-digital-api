@@ -1,8 +1,12 @@
-<div align="center">
+# 💰 Banco Digital API
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=3000&pause=1000&color=00D9FF&center=true&vCenter=true&width=600&lines=%F0%9F%8F%A6+Banco+Digital+API;Spring+Boot+4.0+%7C+Java+21+%7C+MySQL;REST+API+%7C+Docker+%7C+JPA%2FHibernate" alt="Typing SVG" />
+<div align="center">
+  <img src="banner-banco-digital-api.png" alt="Banner Banco Digital API" width="100%"/>
+</div>
 
 <br/>
+
+<div align="center">
 
 ![Java](https://img.shields.io/badge/Java-21-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-4.0.6-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)
