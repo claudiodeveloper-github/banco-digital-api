@@ -1,6 +1,6 @@
 <div align="center">
 
-# 💰 Banco Digital API
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=3000&pause=1000&color=00D9FF&center=true&vCenter=true&width=600&lines=%F0%9F%8F%A6+Banco+Digital+API;Spring+Boot+4.0+%7C+Java+21+%7C+MySQL;REST+API+%7C+Docker+%7C+JPA%2FHibernate" alt="Typing SVG" />
 
 <br/>
 
