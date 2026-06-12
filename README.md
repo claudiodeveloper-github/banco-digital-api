@@ -257,18 +257,21 @@ Acesse o client de demonstração diretamente no seu navegador: **http://localho
 
 ---
 
-## 👨‍💻 Autor
+## 👤 Autor
 
 <div align="center">
 
-**Cláudio B. S. Castro** — Java Backend Developer com foco em inovação
+<img src="https://github.com/claudiodeveloper-github.png" width="100" style="border-radius: 50%;" />
 
-Construindo soluções robustas com Spring Boot, Docker e boas práticas de engenharia de software.
+**Cláudio G. S. Castro**
+*Java Backend Developer em Formação*
 
-<br/>
+Desenvolvedor Backend em formação com foco em Java e Spring Boot.
+Construindo APIs robustas com boas práticas, aprendendo continuamente e enfrentando desafios reais.
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Cláudio_Castro-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/claudio-castro-developer)
-[![GitHub](https://img.shields.io/badge/GitHub-claudiodeveloper--github-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/claudiodeveloper-github)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/claudio-g-s-castro)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/claudiodeveloper-github)
+[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:claudiodeveloper007@gmail.com)
 
 </div>
 
@@ -276,10 +279,14 @@ Construindo soluções robustas com Spring Boot, Docker e boas práticas de enge
 
 ## 📄 Licença
 
-Este projeto está licenciado sob a **MIT License** — consulte o arquivo [LICENSE](LICENSE) para mais detalhes.
+Este projeto está licenciado sob a licença **MIT** — veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+---
 
 <div align="center">
 
-*Feito com ☕ e Java por [Cláudio Castro](https://github.com/claudiodeveloper-github)*
+*Feito com ☕ Java e muito aprendizado por **Cláudio G. S. Castro***
+
+⭐ Se este projeto te ajudou ou te inspirou, deixa uma estrela no repositório!
 
 </div>
