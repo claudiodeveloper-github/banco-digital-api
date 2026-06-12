@@ -2,6 +2,7 @@ package com.claudiocastro.banco.api.controller;
 
 import com.claudiocastro.banco.api.model.ContaCorrente;
 import com.claudiocastro.banco.api.service.ContaService;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -30,7 +31,7 @@ public class ContaController {
     }
 
     @PostMapping
-    public ResponseEntity<ContaCorrente> criarConta(@RequestBody ContaCorrente conta) {
+    public ResponseEntity<ContaCorrente> criarConta(@Valid @RequestBody ContaCorrente conta) {
         return ResponseEntity.status(HttpStatus.CREATED).body(contaService.criarConta(conta));
     }
 
