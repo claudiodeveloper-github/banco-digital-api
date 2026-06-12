@@ -88,43 +88,31 @@ Esta API vai além de um simples backend. Ela inclui um **front-end interativo**
 
 ## 📁 Estrutura do Projeto
 
-```
+```text
 banco-digital-api/
-│
 ├── src/
 │   ├── main/
 │   │   ├── java/
-│   │   │   └── com/claudio/bancodigital/
-│   │   │       │
-│   │   │       ├── controller/         # Camada REST — recebe e responde requisições HTTP
+│   │   │   └── com/claudiocastro/banco/api/
+│   │   │       ├── controller/
 │   │   │       │   └── ContaController.java
-│   │   │       │
-│   │   │       ├── service/            # Camada de negócio — orquestra as regras da aplicação
+│   │   │       ├── service/
 │   │   │       │   └── ContaService.java
-│   │   │       │
-│   │   │       ├── repository/         # Camada de persistência — interface com o banco de dados
+│   │   │       ├── repository/
 │   │   │       │   └── ContaRepository.java
-│   │   │       │
-│   │   │       ├── model/              # Entidades JPA — mapeamento das tabelas do banco
-│   │   │       │   └── Conta.java
-│   │   │       │
-│   │   │       ├── exception/          # Tratamento global de erros com @RestControllerAdvice
-│   │   │       │   ├── GlobalExceptionHandler.java
-│   │   │       │   └── ContaNaoEncontradaException.java
-│   │   │       │
-│   │   │       └── BancoDigitalApplication.java   # Ponto de entrada da aplicação
-│   │   │
+│   │   │       ├── model/
+│   │   │       │   └── ContaCorrente.java
+│   │   │       └── exception/
+│   │   │           ├── GlobalExceptionHandler.java
+│   │   │           └── ContaNaoEncontradaException.java
 │   │   └── resources/
-│   │       ├── static/                 # ✨ Front-end interativo servido pelo Spring Boot
+│   │       ├── static/
 │   │       │   └── index.html
-│   │       └── application.properties  # Configurações de banco, porta e JPA
-│   │
-│   └── test/                           # Testes unitários e de integração
-│
-├── docker-compose.yml                  # Orquestração dos containers (API + MySQL)
-├── Dockerfile                          # Imagem da aplicação Spring Boot
-├── pom.xml                             # Dependências e build Maven
-└── README.md
+│   │       └── application.properties
+│   └── test/
+├── docker-compose.yml
+├── Dockerfile
+└── pom.xml
 ```
 
 ---
