@@ -18,10 +18,8 @@
 
 <br/><br/>
 
-![GitHub stars](https://img.shields.io/github/stars/claudiodeveloper-github/banco-digital-api?style=social)
-![GitHub forks](https://img.shields.io/github/forks/claudiodeveloper-github/banco-digital-api?style=social)
 ![GitHub last commit](https://img.shields.io/github/last-commit/claudiodeveloper-github/banco-digital-api?color=00D9FF)
-![Status](https://img.shields.io/badge/Status-Em_Desenvolvimento-00D9FF?style=flat-square)
+![Status](https://img.shields.io/badge/Status-Conclu%C3%ADdo-10b981?style=flat-square)
 
 </div>
 
@@ -30,14 +28,14 @@
 ## 📋 Índice
 
 - [Sobre o Projeto](#-sobre-o-projeto)
-- [Diferenciais Exclusivos](#-diferenciais-exclusivos--front-end-embutido)
+- [Diferenciais Exclusivos](#-diferenciais-exclusivos---front-end-embutido)
 - [Tecnologias Utilizadas](#-tecnologias-utilizadas)
 - [Estrutura do Projeto](#-estrutura-do-projeto)
 - [Endpoints da API](#-endpoints-da-api)
 - [Regras de Negócio](#-regras-de-negócio)
 - [Tratamento de Exceções](#-tratamento-de-exceções)
 - [Como Executar](#-como-executar)
-  - [🐳 Via Docker (Recomendado)](#-via-docker-recomendado--produção)
+  - [🐳 Via Docker (Recomendado)](#-via-docker-recomendado---produção)
   - [💻 Via IDE (Desenvolvimento)](#-via-ide-desenvolvimento-nativo)
 - [Autor](#-autor)
 - [Licença](#-licença)
@@ -46,27 +44,27 @@
 
 ## 🏦 Sobre o Projeto
 
-O **Banco Digital API** é uma solução RESTful robusta desenvolvida com **Spring Boot 4.x** e **Java 21**, projetada para simular operações bancárias essenciais do mundo real. O projeto aplica as melhores práticas de arquitetura em camadas no padrão **Controller → Service → Repository (Model)**, utilizando o ecossistema Spring para garantir alta coesão e baixo acoplamento entre os componentes.
+O **Banco Digital API** é uma solução RESTful desenvolvida com **Spring Boot 4.x** e **Java 21**, projetada para simular operações bancárias essenciais do mundo real. O projeto aplica uma arquitetura robusta baseada na separação clara de responsabilidades entre as camadas de controle, regras de negócio e persistência de dados.
 
-A aplicação segue o padrão de documentação do repositório **Controller → Service → Repository (Model)**, separando claramente as responsabilidades entre as camadas de negócio, persistência e interface HTTP. O tratamento de exceções é feito com um interceptador global `@RestControllerAdvice` que captura falhas em toda a aplicação e as transforma em respostas JSON padronizadas, garantindo previsibilidade e clareza para o consumidor da API.
+A aplicação utiliza um interceptador global de erros que captura falhas internas e as transforma em respostas padronizadas no formato JSON, garantindo previsibilidade para os consumidores da API. Além disso, conta com resiliência na inicialização e tratamento contra falhas temporárias de conexão com o banco de dados relacional.
 
-> 💡 **Diferencial técnico:** além de ser uma REST API funcional, o projeto conta com uma **Interface Client Interativa** embutida — servida diretamente pelo Spring Boot via `src/main/resources/static` — que permite disparar requisições reais ao servidor e monitorar o status da API em tempo real, sem nenhuma ferramenta externa.
+> 💡 **Diferencial de portfólio:** O projeto conta com uma **Interface Client Interativa** integrada — servida diretamente pelo Spring Boot via recursos estáticos — que permite realizar requisições reais ao servidor e monitorar o status do ecossistema em tempo real, sem a necessidade de clients externos.
 
 ---
 
 ## ✨ Diferenciais Exclusivos — Front-end Embutido
 
-Esta API vai além de um simples backend. Ela inclui um **front-end interativo** servido diretamente pelo Spring Boot, que funciona como um client de demonstração completo, projetado para simular e visualizar todas as operações bancárias da API:
+Esta API possui um front-end dinâmico servido diretamente na rota raiz da aplicação, facilitando a validação das regras de negócio:
 
 | Funcionalidade do Client | Descrição |
 |---|---|
-| 🟢 **Status em Tempo Real** | Monitora se a API está `ONLINE` ou `OFFLINE`, realizando um `GET /contas` ao vivo |
-| 📋 **Simulador REST — POST /contas** | Preencha os campos, visualize o JSON gerado em tempo real e dispare a requisição |
-| 🔍 **Busca de Conta — GET /contas/{numero}** | Consulte qualquer conta pelo número diretamente na interface |
-| 💰 **Depósito Integrado — POST /contas/{numero}/deposito** | Campos de conta e valor com feedback instantâneo do servidor |
-| 💻 **Server Response Viewer** | Exibe a resposta HTTP bruta retornada pelo `ContaController.java`, com botão de limpeza |
+| 🟢 **Status em Tempo Real** | Monitora a disponibilidade da API realizando polling assíncrono para o endpoint de consulta. |
+| 📋 **Simulador REST — POST /contas** | Formulário estruturado que gera e dispara payloads em tempo real para criação de registros. |
+| 🔍 **Busca de Conta — GET /contas/{numero}** | Localiza contas específicas de forma dinâmica através do identificador numérico. |
+| 💰 **Depósito Integrado** | Permite simular operações de crédito em contas persistidas com atualização instantânea do saldo. |
+| 💻 **Server Response Viewer** | Console embutido que renderiza o JSON bruto retornado pelos controllers da aplicação. |
 
-> **Acesse em:** `http://localhost:8080` após subir a aplicação. Nenhum Postman ou Insomnia necessário.
+> **Acesso:** Disponível em `http://localhost:8080` imediatamente após a inicialização da aplicação.
 
 ---
 
@@ -74,15 +72,15 @@ Esta API vai além de um simples backend. Ela inclui um **front-end interativo**
 
 | Tecnologia | Versão | Finalidade |
 |---|---|---|
-| **Java** | 21 | Linguagem de programação principal |
-| **Spring Boot** | 4.0.6 | Framework base da aplicação |
-| **Spring Web** | — | Criação dos endpoints REST |
-| **Spring Data JPA** | — | Abstração da camada de persistência |
-| **Hibernate** | — | Implementação do JPA / ORM |
-| **MySQL / Docker** | 8.0 | Banco de dados relacional em container |
-| **Lombok** | — | Redução de boilerplate (getters, construtores) |
-| **Maven** | — | Gerenciamento de dependências e build |
-| **Docker & Compose** | — | Containerização da API e do banco de dados |
+| **Java** | 21 | Linguagem base e recursos modernos da plataforma |
+| **Spring Boot** | 4.0.6 | Framework principal e gerenciamento do ecossistema |
+| **Spring Web** | — | Construção de endpoints REST de alta performance |
+| **Spring Data JPA** | — | Abstração da camada de persistência de dados |
+| **Hibernate** | — | Engine de mapeamento objeto-relacional (ORM) |
+| **MySQL** | 8.0 | Banco de dados relacional para persistência transacional |
+| **Lombok** | — | Eliminação de código boilerplate de encapsulamento |
+| **Maven & Wrapper** | — | Automação de builds e gerenciamento de dependências integrado |
+| **Docker & Compose** | — | Containerização isolada e orquestração de infraestrutura |
 
 ---
 
@@ -123,10 +121,10 @@ banco-digital-api/
 
 | Método | Endpoint | Descrição | Status de Sucesso |
 |:---:|---|---|:---:|
-| `GET` | `/contas` | Lista todas as contas cadastradas | `200 OK` |
-| `POST` | `/contas` | Cria uma nova conta bancária | `201 Created` |
-| `GET` | `/contas/{numero}` | Busca uma conta específica pelo número | `200 OK` |
-| `POST` | `/contas/{numero}/deposito?valor=` | Realiza um depósito na conta informada | `200 OK` |
+| `GET` | `/contas` | Lista todas as contas cadastradas na base | `200 OK` |
+| `POST` | `/contas` | Realiza a abertura de uma nova conta | `201 Created` |
+| `GET` | `/contas/{numero}` | Localiza um registro pelo número identificador | `200 OK` |
+| `POST` | `/contas/{numero}/deposito?valor=` | Processa um depósito transacional na conta informada | `200 OK` |
 
 ### 📦 Exemplo de Payload — Criar Conta
 
@@ -145,7 +143,7 @@ banco-digital-api/
   "numero": 1,
   "titular": "Cláudio Castro",
   "tipo": "CORRENTE",
-  "saldo": 500.00
+  "saldo": 500.0
 }
 ```
 
@@ -153,16 +151,16 @@ banco-digital-api/
 
 ## 📐 Regras de Negócio
 
-A entidade principal da aplicação é a `CONTA (tb_contas)`, com os seguintes campos:
+A entidade principal da aplicação é a `CONTA` (`tb_contas`), com os seguintes campos:
 
 | Campo | Tipo | Restrição |
 |---|---|---|
-| `numero` | `Long` | Gerado automaticamente pelo banco de dados |
-| `titular` | `String` | Não pode ser nulo ou em branco |
-| `tipo` | `String` | Deve ser `CORRENTE` ou `POUPANÇA` |
-| `saldo` | `Double` | Deve ser maior ou igual a zero no momento da criação |
+| numero | Long | Chave primária transacional gerada por auto-incremento |
+| titular | String | Obrigatório, validação contra valores nulos ou vazios |
+| tipo | String | Restrito aos tipos operacionais `CORRENTE` ou `POUPANÇA` |
+| saldo | Double | Inicialização obrigatória maior ou igual a zero |
 
-- **[DEPÓSITO]** — Não são aceitos valores menores ou iguais a zero. Toda tentativa resulta em erro com status `400 Bad Request`.
+- **[DEPÓSITO]** — Operações de crédito exigem valores estritamente positivos. Valores menores ou iguais a zero disparam exceções de negócio interceptadas com status `400 Bad Request`.
 - **[BUSCA]** — Se uma conta não for localizada pelo número informado, um erro padronizado é retornado com status `404 Not Found`.
 - **[CRIAÇÃO]** — O número da conta é auto-incrementado pelo banco de dados; o cliente não deve informá-lo no payload.
 - **[@GlobalExceptionHandler]** — Um interceptador global captura as exceptions da aplicação e as transforma em respostas JSON padronizadas para o consumidor da API.
@@ -171,32 +169,30 @@ A entidade principal da aplicação é a `CONTA (tb_contas)`, com os seguintes c
 
 ## 🚨 Tratamento de Exceções
 
-A aplicação conta com um interceptador `@RestControllerAdvice / @GlobalExceptionHandler` que captura e formata todas as falhas de forma padronizada.
+O interceptador global estruturado com `@RestControllerAdvice` captura falhas em tempo de execução e retorna payloads padronizados:
 
-| Exceção | Status HTTP | Cenário |
-|---|:---:|---|
-| `ContaNaoEncontradaException` | `404 Not Found` | Conta não localizada pelo número informado |
-| `DepositoInvalidoException` | `400 Bad Request` | Tentativa de depósito com valor ≤ zero |
-| `MethodArgumentNotValidException` | `400 Bad Request` | Payload enviado com campos inválidos ou ausentes |
-| `HttpMessageNotReadableException` | `400 Bad Request` | Corpo da requisição malformado ou tipo inválido |
+| Exceção | Status HTTP | Cenário Operacional |
+|---|---|---|
+| `ContaNaoEncontradaException` | `404 Not Found` | Tentativa de busca ou movimentação em conta inexistente |
+| `IllegalArgumentException` | `400 Bad Request` | Parâmetros transacionais inválidos (ex: depósito ≤ 0) |
+| `MethodArgumentNotValidException` | `400 Bad Request` | Payload enviado com dados malformados ou ausentes |
+| `Exception` | `500 Internal Error` | Fallback de segurança para capturar e mascarar erros inesperados do servidor |
 
 ---
 
 ## 🚀 Como Executar
 
-### Pré-requisitos
-
-Certifique-se de ter instalado em sua máquina:
+**Pré-requisitos**
 
 - [Git](https://git-scm.com/)
-- [Docker Desktop](https://www.docker.com/products/docker-desktop/) *(para o modo Docker)*
-- [JDK 21+](https://adoptium.net/) e [Maven 3.8+](https://maven.apache.org/) *(para o modo nativo)*
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) (Recomendado)
+- [Java JDK 21+](https://adoptium.net/) instalado localmente (Apenas para execução via IDE)
 
 ```bash
-# 1. Clone o repositório
+# Clone o repositório
 git clone https://github.com/claudiodeveloper-github/banco-digital-api.git
 
-# 2. Acesse a pasta do projeto
+# Acesse a pasta raiz do projeto
 cd banco-digital-api
 ```
 
@@ -204,29 +200,25 @@ cd banco-digital-api
 
 ### 🐳 Via Docker (Recomendado — Produção)
 
-> O modo **Docker Compose** sobe a API Spring Boot e o banco MySQL 8.0 em containers isolados, sem precisar configurar nada localmente. Basta ter o Docker Desktop rodando.
-
-**Passo a Passo:**
+Este modo utiliza o Docker Compose para subir tanto a API em Spring Boot quanto o banco MySQL em containers isolados, aplicando regras de healthcheck para mitigar race conditions de conectividade.
 
 ```bash
-# 1. Gere o artefato .jar da aplicação
-mvn clean package -DskipTests
+# 1. Compile e gere o artefato executável utilizando o wrapper nativo
+./mvnw clean package -DskipTests
 
-# 2. Suba todos os containers com Docker Compose
+# 2. Inicialize a infraestrutura orquestrada
 docker compose up --build
 ```
 
-A aplicação estará disponível em: **http://localhost:8080**
+A aplicação estará disponível para uso em: **http://localhost:8080**
 
-**Para encerrar os containers:**
+**Comandos de encerramento:**
 
 ```bash
+# Para parar os containers mantendo os dados
 docker compose down
-```
 
-**Para encerrar E remover os volumes (dados do banco):**
-
-```bash
+# Para parar os containers limpando os volumes do banco de dados
 docker compose down -v
 ```
 
@@ -234,60 +226,49 @@ docker compose down -v
 
 ### 💻 Via IDE (Desenvolvimento Nativo)
 
-> Use este modo durante o desenvolvimento ativo. Requer JDK 21 e Maven instalados localmente. O banco MySQL pode ser provisionado via Docker separadamente.
+Use este modo durante o desenvolvimento ativo. Requer JDK 21 e Maven instalados localmente. O banco MySQL pode ser provisionado via Docker separadamente.
 
-**Passo a Passo:**
-
-**1. Suba apenas o banco MySQL via Docker:**
+**1.** Suba uma instância isolada do banco MySQL via Docker na porta `3307` com o schema correto:
 
 ```bash
 docker run -d \
   --name mysql-banco-digital \
-  -e MYSQL_ROOT_PASSWORD=root \
-  -e MYSQL_DATABASE=banco_digital \
-  -p 3306:3306 \
+  -e MYSQL_ROOT_PASSWORD=Banco2026@ \
+  -e MYSQL_DATABASE=banco_spring \
+  -p 3307:3306 \
   mysql:8.0
 ```
 
-**2. Configure o banco no `application.properties`:**
+**2.** Certifique-se de que o `application.properties` local aponta para a porta correta:
 
 ```properties
-spring.datasource.url=jdbc:mysql://localhost:3306/banco_digital
+spring.datasource.url=jdbc:mysql://localhost:3307/banco_spring?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
 spring.datasource.username=root
-spring.datasource.password=root
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.show-sql=true
+spring.datasource.password=${DB_PASSWORD}
 ```
 
-**3. Execute a aplicação:**
+**3.** Execute a aplicação utilizando o Maven Wrapper local:
 
 ```bash
-mvn spring-boot:run
+./mvnw spring-boot:run
 ```
 
-**4. Acesse a Interface Interativa no navegador:**
-
-```
-http://localhost:8080
-```
+Acesse o client de demonstração diretamente no seu navegador: **http://localhost:8080**
 
 ---
 
-## 👤 Autor
+## 👨‍💻 Autor
 
 <div align="center">
 
-<img src="https://github.com/claudiodeveloper-github.png" width="100" style="border-radius: 50%;" />
+**Cláudio B. S. Castro** — Java Backend Developer com foco em inovação
 
-**Cláudio G. S. Castro**
-*Java Backend Developer em Formação*
+Construindo soluções robustas com Spring Boot, Docker e boas práticas de engenharia de software.
 
-Desenvolvedor Backend em formação com foco em Java e Spring Boot.
-Construindo APIs robustas com boas práticas, aprendendo continuamente e enfrentando desafios reais.
+<br/>
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/claudio-g-s-castro)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/claudiodeveloper-github)
-[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:claudiodeveloper007@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Cláudio_Castro-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/claudio-castro-developer)
+[![GitHub](https://img.shields.io/badge/GitHub-claudiodeveloper--github-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/claudiodeveloper-github)
 
 </div>
 
@@ -295,14 +276,10 @@ Construindo APIs robustas com boas práticas, aprendendo continuamente e enfrent
 
 ## 📄 Licença
 
-Este projeto está licenciado sob a licença **MIT** — veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
----
+Este projeto está licenciado sob a **MIT License** — consulte o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 <div align="center">
 
-*Feito com ☕ Java e muito aprendizado por **Cláudio G. S. Castro***
-
-⭐ Se este projeto te ajudou ou te inspirou, deixa uma estrela no repositório!
+*Feito com ☕ e Java por [Cláudio Castro](https://github.com/claudiodeveloper-github)*
 
 </div>
