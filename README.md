@@ -149,7 +149,7 @@ banco-digital-api/
   "saldo": 500.0
 }
 ```
-
+<!-- TODO: adicionar validação de CPF no cadastro de cliente (#12) -->
 ---
 
 ## 📐 Regras de Negócio
