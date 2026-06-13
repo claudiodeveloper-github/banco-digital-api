@@ -84,6 +84,8 @@ Esta API possui um front-end dinâmico servido diretamente na rota raiz da aplic
 
 ---
 
+<!-- TODO: implementar paginação nos endpoints de listagem (#8) -->
+
 ## 📁 Estrutura do Projeto
 
 ```text
