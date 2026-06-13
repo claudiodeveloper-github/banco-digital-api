@@ -51,6 +51,7 @@ A aplicação utiliza um interceptador global de erros que captura falhas intern
 > 💡 **Diferencial de portfólio:** O projeto conta com uma **Interface Client Interativa** integrada — servida diretamente pelo Spring Boot via recursos estáticos — que permite realizar requisições reais ao servidor e monitorar o status do ecossistema em tempo real, sem a necessidade de clients externos.
 
 ---
+<!-- TODO: adicionar testes unitários com JUnit 5 e Mockito (#10) -->
 
 ## ✨ Diferenciais Exclusivos — Front-end Embutido
 
