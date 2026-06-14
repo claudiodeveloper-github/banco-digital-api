@@ -118,6 +118,8 @@ banco-digital-api/
 
 ---
 
+<!-- TODO: criar endpoint de extrato filtrado por período (#14) -->
+
 ## 🔌 Endpoints da API
 
 **Base URL:** `http://localhost:8080`
